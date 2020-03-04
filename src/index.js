@@ -1,13 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-//set up store and connect thunk to store
-import {createStore, applyMiddleware} from 'redux';
-//set up thunk
-import thunk from 'redux-thunk';
-//wrap App with Provider so you have access to Store
-import {Provider} from 'react-redux';
+import {createStore, applyMiddleware, compose} from 'redux'; //set up store and connect thunk to store
+// compose combines middlewares so that we can pass one argument.
+import thunk from 'redux-thunk'; //set up thunk
+import {Provider} from 'react-redux'; //wrap App with Provider so all components have access to Store
 
 import App from './App';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+//reducer = tells us what to do with the stored data
+
+//store = globally storing data
+let store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)))
+
+ReactDOM.render(
+    <Provider store={store}>
+        <App />
+    </Provider>
+    ,
+document.getElementById('root'));
 

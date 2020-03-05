@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {createStore, applyMiddleware, compose} from 'redux'; //set up store and connect thunk to store
 // compose combines middlewares so that we can pass one argument.
-import thunk from 'redux-thunk'; //set up thunk
+import thunk from 'redux-thunk'; //set up thunk. Returns a function from the action creator. needed for async requests.
 import {Provider} from 'react-redux'; //wrap App with Provider so all components have access to Store
 import genreReducer from './reducers/genreReducer';
 

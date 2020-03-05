@@ -2,7 +2,7 @@ import React from 'react';
 // import logo from './logo.svg';
 // import './App.css';
 import {connect} from 'react-redux';
-import {fetchGenres} from './actions/fetchGenres';
+import GenresContainer from './containers/GenresContainer';
 
 class App extends React.Component {
 
@@ -12,14 +12,10 @@ class App extends React.Component {
     // .then(data => console.log(data))
   // }
 
-  componentDidMount() {
-    this.props.fetchGenres({type: 'FETCH_GENRES', payload: {name: 'Horror'}})
-  }
-
   render() {
     return (
       <div className="App">
-        App
+        <GenresContainer />
       </div>
     );
   }
@@ -38,5 +34,5 @@ class App extends React.Component {
 //connect passes the function over to App
 //connect can pass, mapStateToProps, mapDispatchToProps, or directly pass in an action creater.
 //action creater gives us the ability to update our store directly from fetching component.
-export default connect(null, {fetchGenres})(App);
+export default connect()(App);
 //connect is dispatching

@@ -5,5 +5,5 @@ export function fetchGenres(action) {
     // .then(response => response.json())
     // .then(data => console.log(data))
 
-    return action
+    
 }

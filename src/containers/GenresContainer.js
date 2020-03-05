@@ -1,16 +1,32 @@
 // render other components and pass them data. Container has other functions/callback functions, etc.
 
 import React from 'react';
-import GenreLists from './components/GenreLists';
+import {connect} from 'react-redux';
+import {fetchGenres} from '../actions/fetchGenres';
+import GenreLists from '../components/GenreLists';
+import GenreInput from '../components/GenreInput';
 
 class GenresContainer extends React.Component {
+
+    componentDidMount() {
+        this.props.fetchGenres()
+    }
+
     render() {
         return (
             <div>
-                GenresContainer
+                <GenreInput />
+                <GenreLists genres={this.props.genres}/>
             </div>
         )
     }
 }
 
-export default GenresContainer;
+//accessing values currently in our store as props.
+const mapStateToProps = state => {
+    return {
+        genres: state.genres
+    }
+}
+
+export default connect(mapStateToProps, {fetchGenres})(GenresContainer);

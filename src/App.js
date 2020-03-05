@@ -1,7 +1,6 @@
 import React from 'react';
 // import logo from './logo.svg';
 // import './App.css';
-import {connect} from 'react-redux';
 import GenresContainer from './containers/GenresContainer';
 
 class App extends React.Component {
@@ -22,7 +21,7 @@ class App extends React.Component {
   
 }
 
-//accessing values in our currently in store as props.
+//accessing values currently in our store as props.
 // const mapStateToProps = (state) => {
 //   return {
 //     genres: state.genres
@@ -34,5 +33,5 @@ class App extends React.Component {
 //connect passes the function over to App
 //connect can pass, mapStateToProps, mapDispatchToProps, or directly pass in an action creater.
 //action creater gives us the ability to update our store directly from fetching component.
-export default connect()(App);
+export default App;
 //connect is dispatching

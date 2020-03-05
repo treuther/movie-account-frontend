@@ -4,9 +4,10 @@ import React from 'react';
 
 //this will render a list of genres
 const GenreLists = (props) => {
+    
     return (
         <div>
-            Genre Lists
+            {props.genres.map(genre => <li key={genre.id}>{genre.name}</li>)}
         </div>
     )
 }

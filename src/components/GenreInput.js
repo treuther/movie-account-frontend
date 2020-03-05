@@ -7,7 +7,7 @@ class GenreInput extends React.Component {
     render() {
         return (
             <div>
-                GenreInput
+                Genre Input
             </div>
         )
     }

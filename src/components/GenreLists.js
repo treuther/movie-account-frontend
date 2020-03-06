@@ -1,4 +1,5 @@
 import React from 'react';
+import Genre from './Genre';
 
 //functional component because it's just listing info, not taking in info.
 
@@ -9,7 +10,8 @@ const GenreLists = (props) => {
     
     return (
         <div>
-            {props.genres.map(genre => <li key={genre.id}>{genre.name}</li>)}
+            {props.genres.map(genre =>
+            <div key={genre.id}><Genre genre={genre}/></div>)}
         </div>
     )
 }

@@ -16,7 +16,7 @@ class GenresContainer extends React.Component {
         return (
             <div>
                 <GenreInput />
-                <GenreLists genres={this.props.genres}/>
+                <GenreLists genres={this.props.genres} />
             </div>
         )
     }

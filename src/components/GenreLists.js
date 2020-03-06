@@ -4,6 +4,8 @@ import React from 'react';
 
 //this will render a list of genres
 const GenreLists = (props) => {
+
+    console.log(props)
     
     return (
         <div>

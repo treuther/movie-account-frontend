@@ -3,8 +3,10 @@
 export default function genreReducer(state = {genres: []}, action) {
     switch (action.type) {
         case 'FETCH_GENRES':
-            return {genres: action.payload} //this is our new state!
+            return {genres: action.payload}
         default:
             return state
     }  
 }
+
+// the return is the new state!

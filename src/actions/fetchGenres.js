@@ -1,4 +1,5 @@
 //the action creater creates an action object, the action object gets dispatched to the reducer
+//using regular function syntax. arrow function could work too!
 
 export function fetchGenres() {
     return (dispatch) => {

@@ -1,4 +1,6 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import {addGenre} from '../actions/addGenre';
 
 // in order to have a controlled form, you gotta have class...
 
@@ -15,10 +17,16 @@ class GenreInput extends React.Component {
         })
     }
 
+    //goal: save to database and update Redux store.
+    handleOnSubmit = (event) => {
+        event.preventDefault();
+        this.props.addGenre(this.state)
+    }
+
     render() {
         return (
             <div>
-                <form>
+                <form onSubmit={this.handleOnSubmit}>
                     <label>Enter Genre Name:</label><br/>
                     <input type="text" placeholder="Name" value={this.state.name} name="name" onChange={this.handleOnChange}/> <br/>
                     <input type="submit" />
@@ -28,4 +36,5 @@ class GenreInput extends React.Component {
     }
 }
 
-export default GenreInput;
+
+export default connect(null, {addGenre})(GenreInput);

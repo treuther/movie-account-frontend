@@ -6,6 +6,7 @@ import {Route} from 'react-router-dom';
 import {fetchGenres} from '../actions/fetchGenres';
 import GenreLists from '../components/GenreLists';
 import GenreInput from '../components/GenreInput';
+import Genre from '../components/Genre';
 
 class GenresContainer extends React.Component {
 
@@ -17,12 +18,14 @@ class GenresContainer extends React.Component {
         return (
             <div>
                 <Route path='/genres/new' component={GenreInput} /> {/*routes user to genre input form*/}
-        <Route path='/genres' render={() => <GenreLists genres={this.props.genres}/>}/>
-                <GenreLists genres={this.props.genres} />
+                <Route path='/genres/:id' render={(routerProps) => <Genre {...routerProps} genres={this.props.genres}/>}/>
+                <Route exact path='/genres' render={(routerProps) => <GenreLists {...routerProps} genres={this.props.genres}/>}/>
             </div>
         )
     }
 }
+
+//...routerProps give Genre access to params
 
 //accessing values currently in our store as props.
 const mapStateToProps = state => {

@@ -2,6 +2,7 @@
 
 import React from 'react';
 import {connect} from 'react-redux';
+import {Route} from 'react-router-dom';
 import {fetchGenres} from '../actions/fetchGenres';
 import GenreLists from '../components/GenreLists';
 import GenreInput from '../components/GenreInput';
@@ -15,8 +16,8 @@ class GenresContainer extends React.Component {
     render() {
         return (
             <div>
-                <GenreInput />
-                Genre Input Section
+                <Route path='/genres/new' component={GenreInput} /> {/*routes user to genre input form*/}
+        <Route path='/genres' render={() => <GenreLists genres={this.props.genres}/>}/>
                 <GenreLists genres={this.props.genres} />
             </div>
         )

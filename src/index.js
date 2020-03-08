@@ -4,6 +4,7 @@ import {createStore, applyMiddleware, compose} from 'redux'; //set up store and 
 // compose combines middlewares so that we can pass one argument.
 import thunk from 'redux-thunk'; //set up thunk. Returns a function from the action creator. needed for async requests.
 import {Provider} from 'react-redux'; //wrap App with Provider so all components have access to Store
+import {BrowserRouter as Router} from 'react-router-dom';
 import genreReducer from './reducers/genreReducer';
 
 import App from './App';
@@ -17,7 +18,9 @@ let store = createStore(genreReducer, composeEnhancers(applyMiddleware(thunk)))
 
 ReactDOM.render(
     <Provider store={store}>
-        <App />
+        <Router>
+            <App />
+        </Router>
     </Provider>
     ,
 document.getElementById('root'));

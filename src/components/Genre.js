@@ -3,15 +3,23 @@
 
 import React from 'react';
 import {Redirect} from 'react-router-dom';
+import MoviesContainer from '../containers/MoviesContainer';
 
 const Genre = (props) => {
 
     let genre = props.genres[props.match.params.id - 1]
     
     return (
-        <h2>
-            {genre ? genre.name : null}
-        </h2>
+        <div>
+            <h2>
+                {genre ? genre.name : null}
+            </h2>
+
+                <ul>
+                    <li>Movies Container</li>
+                </ul>
+        </div>
+        
     )
 }
 

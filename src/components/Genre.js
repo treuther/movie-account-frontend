@@ -14,10 +14,7 @@ const Genre = (props) => {
             <h2>
                 {genre ? genre.name : null}
             </h2>
-
-                <ul>
-                    <li>Movies Container</li>
-                </ul>
+                <MoviesContainer />
         </div>
         
     )

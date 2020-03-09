@@ -9,9 +9,9 @@ const Genre = (props) => {
     let genre = props.genres[props.match.params.id - 1]
     
     return (
-        <li>
+        <h2>
             {genre ? genre.name : null}
-        </li>
+        </h2>
     )
 }
 

@@ -2,6 +2,7 @@
 //functional component because not utilizing state
 
 import React from 'react';
+import {Redirect} from 'react-router-dom';
 
 const Genre = (props) => {
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import {Route, Link} from 'react-router-dom';
 import Genre from './Genre';
 
 //functional component because it's just listing info, not taking in info.
@@ -11,7 +12,9 @@ const GenreLists = (props) => {
     return (
         <div>
             {props.genres.map(genre =>
-            <div key={genre.id}><Genre genre={genre}/></div>)}
+            <li key={genre.id}>
+                <Link to={`/genres/${genre.id}`}>{genre.name}</Link>
+            </li>)}
         </div>
     )
 }

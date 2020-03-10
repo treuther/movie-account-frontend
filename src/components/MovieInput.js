@@ -2,6 +2,7 @@
 
 import React from 'react';
 import {connect} from 'react-redux';
+import { addMovie } from '../actions/addMovie';
 
 
 class MovieInput extends React.Component {
@@ -20,7 +21,7 @@ class MovieInput extends React.Component {
 
     handleOnSubmit = (event) => {
         event.preventDefault();
-        
+        // addMovie(this.state, this.props.id)
     }
 
     render() {

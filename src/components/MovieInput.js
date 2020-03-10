@@ -8,18 +8,25 @@ class MovieInput extends React.Component {
 
     state = {
         title: '',
-        rating: '',
+        rating: 'R',
         description: ''
     }
 
-    handleOnChange = () => {
-        //
+    handleOnChange = (event) => {
+        this.setState({
+            [event.target.name]: event.target.value
+        })
+    }
+
+    handleOnSubmit = (event) => {
+        event.preventDefault();
+        
     }
 
     render() {
         return(
             <div>
-                <form>
+                <form onSubmit={this.handleOnSubmit}>
                     <label>Enter title:</label><br />
                     <input type="text" name="title" value={this.state.title} onChange={this.handleOnChange}/><br/>
                     <label>Choose rating:</label>
@@ -30,6 +37,7 @@ class MovieInput extends React.Component {
                     </select><br />
                     <label>Enter description:</label><br />
                     <input type="text" name="description" value={this.state.description} onChange={this.handleOnChange}/><br/>
+                    <input type="submit" />
                 </form>
             </div>
         )

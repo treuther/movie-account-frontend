@@ -14,7 +14,7 @@ const Genre = (props) => {
             <h2>
                 {genre ? genre.name : null}
             </h2>
-                <MoviesContainer />
+                <MoviesContainer genre={genre}/>
         </div>
         
     )

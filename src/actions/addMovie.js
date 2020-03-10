@@ -9,6 +9,6 @@ export const addMovie = (movie, genreId) => {
             body: JSON.stringify(movie)
         })
         .then(resp => resp.json())
-        .then(movie => dispatch({type: 'ADD_MOVIE', payload: movie}))
+        .then(genre => dispatch({type: 'ADD_MOVIE', payload: genre}))
     }
 }

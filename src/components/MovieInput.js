@@ -21,7 +21,12 @@ class MovieInput extends React.Component {
 
     handleOnSubmit = (event) => {
         event.preventDefault();
-        // addMovie(this.state, this.props.id)
+        this.props.addMovie(this.state, this.props.genre.id)
+        this.setState({
+            title: '',
+        rating: 'R',
+        description: ''
+        })
     }
 
     render() {
@@ -45,4 +50,4 @@ class MovieInput extends React.Component {
     }
 }
 
-export default connect(null)(MovieInput);
+export default connect(null, {addMovie})(MovieInput);

@@ -25,6 +25,15 @@ export default function genreReducer(state = {genres: []}, action) {
                 }
             })
             return {...state, genres: removeGenres}
+        case 'EDIT_GENRE':
+            let editGenres = state.genres.map(genre => {
+                if (genre.id === action.payload.id) {
+                    return action.payload
+                } else {
+                    return genre
+                }
+            })
+            return {...state, genres: editGenres}
         default:
             return state
     }  

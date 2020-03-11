@@ -4,6 +4,7 @@
 import React from 'react';
 import {Redirect} from 'react-router-dom';
 import MoviesContainer from '../containers/MoviesContainer';
+import GenreEdit from './GenreEdit'
 
 const Genre = (props) => {
 
@@ -16,6 +17,7 @@ const Genre = (props) => {
                 {genre ? genre.name : null}
             </h2>
                 <MoviesContainer genre={genre}/>
+                <GenreEdit genre={genre}/>
         </div>
         
     )

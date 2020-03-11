@@ -1,6 +1,6 @@
 export const deleteMovie = (movieId, genreId) => {
 
-    return dispatch => {
+    return (dispatch) => {
         return fetch(`http://localhost:3000/api/vi/genres/${genreId}/movies/${movieId}`, {
             method: 'DELETE'
         })

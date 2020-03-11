@@ -7,8 +7,8 @@ import MoviesContainer from '../containers/MoviesContainer';
 
 const Genre = (props) => {
 
-    let genre = props.genres[props.match.params.id - 1]
-    // let genre = props.genres.filter(genre => genre.id == props.match.params.id)[0]
+    // let genre = props.genres[props.match.params.id - 1]
+    let genre = props.genres.filter(genre => genre.id == props.match.params.id)[0]
     
     return (
         <div>

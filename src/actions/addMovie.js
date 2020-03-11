@@ -9,6 +9,12 @@ export const addMovie = (movie, genreId) => {
             body: JSON.stringify(movie)
         })
         .then(resp => resp.json())
-        .then(genre => dispatch({type: 'ADD_MOVIE', payload: genre}))
+        .then(genre => {
+            if (genre.error) {
+                alert(genre.error)
+            } else {
+                dispatch({type: 'ADD_MOVIE', payload: genre})
+            } 
+        })
     }
 }

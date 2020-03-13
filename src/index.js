@@ -7,6 +7,7 @@ import {Provider} from 'react-redux'; //wrap App with Provider so all components
 import {BrowserRouter as Router} from 'react-router-dom';
 import genreReducer from './reducers/genreReducer';
 import NavBar from './components/NavBar';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import App from './App';
 

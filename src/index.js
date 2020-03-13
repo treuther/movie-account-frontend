@@ -21,6 +21,9 @@ ReactDOM.render(
     <Provider store={store}>
         <Router>
             <NavBar />
+            <div>
+                <h1>Movie Emporium</h1>
+            </div>
             <App />
         </Router>
     </Provider>

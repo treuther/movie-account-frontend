@@ -3,6 +3,7 @@ import React from 'react';
 // import './App.css';
 import NavBar from './components/NavBar';
 import GenresContainer from './containers/GenresContainer';
+import MoviesContainer from './containers/MoviesContainer';
 
 class App extends React.Component {
 
@@ -17,6 +18,7 @@ class App extends React.Component {
       <div className="App">
         <NavBar />
         <GenresContainer />
+        <MoviesContainer />
       </div>
     );
   }

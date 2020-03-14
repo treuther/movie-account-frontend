@@ -15,7 +15,7 @@ class MoviesContainer extends React.Component {
     render() {
         return(
             <div>
-                <MovieInput movie={this.props.movie} />
+                {/* <MovieInput movie={this.props.movie} /> */}
                 <Movies movies={this.props.movies && this.props.movies} />
                 {/* <MovieInput genre={this.props.genre}/>
                 <Movies movies={this.props.genre && this.props.genre.movies}/> */}

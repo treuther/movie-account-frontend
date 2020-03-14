@@ -7,6 +7,7 @@ import {fetchGenres} from '../actions/fetchGenres';
 import GenreLists from '../components/GenreLists';
 import GenreInput from '../components/GenreInput';
 import Genre from '../components/Genre';
+import Home from '../components/Home';
 
 class GenresContainer extends React.Component {
 
@@ -21,6 +22,7 @@ class GenresContainer extends React.Component {
                     <Route path='/genres/new' component={GenreInput} /> {/*routes user to genre input form*/}
                     <Route path='/genres/:id' render={(routerProps) => <Genre {...routerProps} genres={this.props.genres}/>}/>
                     <Route exact path='/genres' render={(routerProps) => <GenreLists {...routerProps} genres={this.props.genres}/>}/>
+                    <Route exact path='/' render={Home} />
                 </Switch>
             </div>
         )

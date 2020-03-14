@@ -1,6 +1,7 @@
 import React from 'react';
 // import logo from './logo.svg';
 // import './App.css';
+import NavBar from './components/NavBar';
 import GenresContainer from './containers/GenresContainer';
 
 class App extends React.Component {
@@ -14,6 +15,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <NavBar />
         <GenresContainer />
       </div>
     );

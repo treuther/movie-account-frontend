@@ -6,7 +6,6 @@ import thunk from 'redux-thunk'; //set up thunk. Returns a function from the act
 import {Provider} from 'react-redux'; //wrap App with Provider so all components have access to Store
 import {BrowserRouter as Router} from 'react-router-dom';
 import genreReducer from './reducers/genreReducer';
-import NavBar from './components/NavBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 
@@ -22,10 +21,6 @@ let store = createStore(genreReducer, composeEnhancers(applyMiddleware(thunk)))
 ReactDOM.render(
     <Provider store={store}>
         <Router>
-            <NavBar />
-            <div>
-                <h1>Movie Emporium</h1>
-            </div>
             <App />
         </Router>
     </Provider>

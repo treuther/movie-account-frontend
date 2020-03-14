@@ -23,7 +23,7 @@ ReactDOM.render(
         <Router>
             <NavBar />
             <div>
-                <h1>Movie Emporium</h1>
+                <h1 style={{textAlign: 'center'}}>Movie Emporium</h1>
             </div>
             <App />
         </Router>

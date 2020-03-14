@@ -11,7 +11,7 @@ const NavBar = (props) => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
             <Nav>
-                <Nav.Link href='/genres'>Movie Genres</Nav.Link>
+                <Nav.Link href='/genres'>All Genres</Nav.Link>
                 <Nav.Link href='/genres/new'>Add New Genre</Nav.Link>
             </Nav>
         </Navbar.Collapse>

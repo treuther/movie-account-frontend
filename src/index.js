@@ -8,6 +8,7 @@ import {BrowserRouter as Router} from 'react-router-dom';
 import genreReducer from './reducers/genreReducer';
 import NavBar from './components/NavBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './index.css';
 
 import App from './App';
 
@@ -23,7 +24,7 @@ ReactDOM.render(
         <Router>
             <NavBar />
             <div>
-                <h1 style={{textAlign: 'center'}}>Movie Emporium</h1>
+                <h1>Movie Emporium</h1>
             </div>
             <App />
         </Router>

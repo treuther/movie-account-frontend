@@ -13,7 +13,7 @@ const Home = (props) => {
             <Row className='opening'>
             <Col>
                 <p>Welcome to Movie Emporium!</p>
-                <p>A place to record all movie you watch, according to Genre.</p>
+                <p>A place to record all movies you watch, according to Genre. Please feel free to add/edit/delete genres or movies.</p>
             </Col>
             <Col>
                 <Tally />

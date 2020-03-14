@@ -1,6 +1,6 @@
 import React from 'react';
 import {Route, Link} from 'react-router-dom';
-import Genre from './Genre';
+
 
 //functional component because it's just listing info, not taking in info.
 

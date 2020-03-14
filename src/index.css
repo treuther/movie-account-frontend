@@ -1,7 +1,20 @@
+/* ----- OVERALL STYLING -----*/
+
 h1 {
     text-align: center;
 }
 
+/* ----- HOME PAGE STYLING ----- */
+
+/* HOME PAGE STYLING GOES HERE */
+
+
+
 .home {
+    padding-top: 30px;
     text-align: center;
+}
+
+.opening {
+    padding: 50px;
 }

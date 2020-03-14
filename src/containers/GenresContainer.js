@@ -18,7 +18,7 @@ class GenresContainer extends React.Component {
         return (
             <div>
                 <Switch> {/*this will look for the first match to the path*/}
-                    <Route path='/genres/new' component={GenreInput} /> {/*routes user to genre input form*/}
+                    <Route path='/genres/new' component={GenreInput} /> {/*routes the user to genre input form*/}
                     <Route path='/genres/:id' render={(routerProps) => <Genre {...routerProps} genres={this.props.genres}/>}/>
                     <Route exact path='/genres' render={(routerProps) => <GenreLists {...routerProps} genres={this.props.genres}/>}/>
                 </Switch>

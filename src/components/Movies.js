@@ -7,6 +7,8 @@ import {deleteMovie} from '../actions/deleteMovie'
 
 const Movies = (props) => {
 
+    console.log(props)
+
 //defined with const keywords because this is a functional component.
 const handleDelete = (movie) => {
     props.deleteMovie(movie.id, movie.genre_id) //because this is a functional componenet, it comes in a props, not this.props

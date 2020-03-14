@@ -1,5 +1,7 @@
 import React from 'react';
+import {Route} from 'react-router-dom';
 import ReactDOM from 'react-dom';
+import Home from './components/Home';
 import {createStore, applyMiddleware, compose} from 'redux'; //set up store and connect thunk to store
 // compose combines middlewares so that we can pass one argument.
 import thunk from 'redux-thunk'; //set up thunk. Returns a function from the action creator. needed for async requests.
@@ -22,6 +24,7 @@ ReactDOM.render(
     <Provider store={store}>
         <Router>
             <App />
+            <Route exact path='/' component={Home} />
         </Router>
     </Provider>
     ,

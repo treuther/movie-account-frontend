@@ -1,6 +1,8 @@
 //class component because containr will handle state.
 
 import React from 'react';
+import {connect} from 'react-redux';
+import {fetchMovies} from '../actions/fetchMovies';
 import MovieInput from '../components/MovieInput';
 import Movies from '../components/Movies';
 
@@ -16,4 +18,10 @@ class MoviesContainer extends React.Component {
     }
 }
 
-export default MoviesContainer;
+const mapStateToProps = state => {
+    return {
+        movies: state.mmovies
+    }
+}
+
+export default connect(mapStateToProps, {fetchMovies})(MoviesContainer);

@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {Nav, Navbar, Brand, Toggle, Collapse} from 'react-bootstrap';
+import {Nav, Navbar, Brand} from 'react-bootstrap';
 
 const NavBar = (props) => {
     

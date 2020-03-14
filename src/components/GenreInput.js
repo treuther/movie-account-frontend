@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {addGenre} from '../actions/addGenre';
+import {Form, Group, Cotnrol, Label} from 'react-bootstrap';
 
 // in order to have a controlled form, you gotta have class...
 
@@ -29,11 +30,11 @@ class GenreInput extends React.Component {
     render() {
         return (
             <div>
-                <form onSubmit={this.handleOnSubmit}>
-                    <label>Enter Genre Name:</label><br/>
-                    <input type="text" placeholder="Name" value={this.state.name} name="name" onChange={this.handleOnChange}/> <br/>
+                <Form.Group onSubmit={this.handleOnSubmit}>
+                    <Form.Label>Enter Genre Name:</Form.Label><br/>
+                    <Form.Control type="text" placeholder="Name" value={this.state.name} name="name" onChange={this.handleOnChange}/> <br/>
                     <input type="submit" />
-                </form>
+                </Form.Group>
             </div>
         )
     }

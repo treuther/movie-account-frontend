@@ -1,6 +1,7 @@
 //functional component because it receives prop
 
 import React from 'react';
+import {Route, Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {deleteMovie} from '../actions/deleteMovie'
 
@@ -12,11 +13,19 @@ const handleDelete = (movie) => {
 }
 
     return (
+        // <div>
+        //     {props.movies && props.movies.map(movie => 
+        //             <li key={movie.id}>{movie.title} - {movie.rating} - {movie.description} <button onClick={() => handleDelete(movie)}>Delete</button></li>
+        //         )}
+        // </div>
         <div>
-            {props.movies && props.movies.map(movie => 
-                    <li key={movie.id}>{movie.title} - {movie.rating} - {movie.description} <button onClick={() => handleDelete(movie)}>Delete</button></li>
-                )}
-        </div>
+        {props.movies && props.movies.map(movie =>
+            <li key={movie.id}>
+                <Link to={`/movies/${movie.id}`}>{movie.title}</Link>
+            </li>
+                // <li key={movie.id}>{movie.title} - {movie.rating} - {movie.description} <button onClick={() => handleDelete(movie)}>Delete</button></li>
+            )}
+    </div>
     )
 }
 

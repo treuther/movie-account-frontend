@@ -6,9 +6,9 @@ const Tally = (props) => {
     return (
         <Container className="tally">
             <h2>Movie Tally</h2>
-            <div>
+            {/* <div>
                 {props.genre ? props.genre.name : null}
-            </div>
+            </div> */}
         </Container>
     )
 }

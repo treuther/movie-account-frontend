@@ -5,6 +5,7 @@ import React from 'react';
 import {Redirect} from 'react-router-dom';
 import MoviesContainer from '../containers/MoviesContainer';
 import GenreEdit from './GenreEdit'
+import {Container} from 'react-bootstrap';
 
 const Genre = (props) => {
 
@@ -12,13 +13,13 @@ const Genre = (props) => {
     let genre = props.genres.filter(genre => genre.id == props.match.params.id)[0]
     
     return (
-        <div>
+        <Container>
             <h3>
                 {genre ? genre.name : null}
             </h3>
                 <MoviesContainer genre={genre}/>
                 <GenreEdit genre={genre}/>
-        </div>
+        </Container>
         
     )
 }

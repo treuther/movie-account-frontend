@@ -1,14 +1,15 @@
 import React from 'react';
+import {Container} from 'react-bootstrap';
 
 const Tally = (props) => {
     
     return (
-        <div>
+        <Container className="tally">
             <h2>Movie Tally</h2>
-            {/* <div>
+            <div>
                 {props.genre ? props.genre.name : null}
-            </div> */}
-        </div>
+            </div>
+        </Container>
     )
 }
 

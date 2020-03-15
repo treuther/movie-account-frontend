@@ -29,13 +29,16 @@ class GenreInput extends React.Component {
 
     render() {
         return (
+            
             <Container className='formContainer'>
                 <h2>Please Enter New Genre</h2>
-                <Form.Group  className='form' onSubmit={this.handleOnSubmit}>
-                    <Form.Label>Enter Genre Name:</Form.Label><br/>
-                    <Form.Control type="text" placeholder="Name" value={this.state.name} name="name" onChange={this.handleOnChange}/> <br/>
-                    <input type="submit" />
-                </Form.Group>
+                <form onSubmit={this.handleOnSubmit}>
+                    <Form.Group  className='form'>
+                        <Form.Label>Enter Genre Name:</Form.Label><br/>
+                        <Form.Control type="text" placeholder="Name" value={this.state.name} name="name" onChange={this.handleOnChange}/> <br/>
+                        <input type="submit" />
+                    </Form.Group>
+                </form>
             </Container>
         )
     }

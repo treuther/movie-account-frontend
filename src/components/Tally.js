@@ -2,13 +2,15 @@ import React from 'react';
 import {Container} from 'react-bootstrap';
 
 const Tally = (props) => {
+    console.log(props)
     
     return (
         <Container className="tally">
-            <h2>Movie Tally</h2>
-            {/* <div>
-                {props.genre ? props.genre.name : null}
-            </div> */}
+            <h2>Emporium Tally</h2>
+            <div>
+                {props.genre ? props.genre.count : null}
+                {/* {props.genre} */}
+            </div>
         </Container>
     )
 }

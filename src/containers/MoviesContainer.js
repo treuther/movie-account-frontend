@@ -2,7 +2,7 @@
 
 import React from 'react';
 import {connect} from 'react-redux';
-import {fetchMovies} from '../actions/fetchMovies';
+// import {fetchMovies} from '../actions/fetchMovies';
 import MovieInput from '../components/MovieInput';
 import Movies from '../components/Movies';
 
@@ -16,9 +16,9 @@ class MoviesContainer extends React.Component {
         return(
             <div>
                 {/* <MovieInput movie={this.props.movie} /> */}
-                <Movies movies={this.props.movies && this.props.movies} />
-                {/* <MovieInput genre={this.props.genre}/>
-                <Movies movies={this.props.genre && this.props.genre.movies}/> */}
+                {/* <Movies movies={this.props.genres && this.props.genres} /> */}
+                {/* <MovieInput genre={this.props.genre}/>*/}
+                <Movies movies={this.props.genre && this.props.genre.movies}/>
             </div>
         )
     }

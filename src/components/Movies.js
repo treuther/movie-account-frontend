@@ -15,19 +15,19 @@ const handleDelete = (movie) => {
 }
 
     return (
-        // <div>
-        //     {props.movies && props.movies.map(movie => 
-        //             <li key={movie.id}>{movie.title} - {movie.rating} - {movie.description} <button onClick={() => handleDelete(movie)}>Delete</button></li>
-        //         )}
-        // </div>
         <div>
-        {props.movies && props.movies.map(movie =>
-            <li key={movie.id}>
-                <Link to={`/movies/${movie.id}`}>{movie.title}</Link> <button onClick={() => handleDelete(movie)}>Delete</button>
-            </li>
-                // <li key={movie.id}>{movie.title} - {movie.rating} - {movie.description} <button onClick={() => handleDelete(movie)}>Delete</button></li>
-            )}
-    </div>
+            {props.movies && props.movies.map(movie => 
+                    <li key={movie.id}>{movie.title} - {movie.rating} - {movie.description} <button onClick={() => handleDelete(movie)}>Delete</button></li>
+                )}
+        </div>
+        // <div>
+        // {props.movies && props.movies.map(movie =>
+            // <li key={movie.id}>
+            //     <Link to={`/movies/${movie.id}`}>{movie.title}</Link> <button onClick={() => handleDelete(movie)}>Delete</button>
+            // </li>
+    //             <li key={movie.id}>{movie.title} - {movie.rating} - {movie.description} <button onClick={() => handleDelete(movie)}>Delete</button></li>
+    //         )}
+    // </div>
     )
 }
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import {Route, Link} from 'react-router-dom';
-import {Container, ListGroup, Item} from 'react-bootstrap';
+import {Container, ListGroup, Item, Button} from 'react-bootstrap';
 
 
 //functional component because it's just listing info, not taking in info.
@@ -20,6 +20,9 @@ const GenreLists = (props) => {
                 <Link to={`/genres/${genre.id}`}>{genre.name}</Link>
             </ListGroup.Item>)}
             </ListGroup>
+
+            <Button className="btn" variant="dark" href='/genres/new'>Add New Genre</Button>
+
         </Container>
     )
 }

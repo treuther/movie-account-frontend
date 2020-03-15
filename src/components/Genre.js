@@ -3,7 +3,7 @@
 
 import React from 'react';
 import {Redirect} from 'react-router-dom';
-import MoviesContainer from '../containers/MoviesContainer';
+// import MoviesContainer from '../containers/MoviesContainer';
 import GenreEdit from './GenreEdit'
 import {Container} from 'react-bootstrap';
 
@@ -17,7 +17,7 @@ const Genre = (props) => {
             <h3>
                 {genre ? genre.name : null}
             </h3>
-                <MoviesContainer genre={genre}/>
+                {/* <MoviesContainer genre={genre}/> */}
                 <GenreEdit genre={genre}/>
         </Container>
         

@@ -8,9 +8,9 @@ import Movies from '../components/Movies';
 
 class MoviesContainer extends React.Component {
 
-    componentDidMount() {
-        this.props.fetchMovies()
-    }
+    // componentDidMount() {
+    //     this.props.fetchMovies()
+    // }
     
     render() {
         return(
@@ -24,10 +24,11 @@ class MoviesContainer extends React.Component {
     }
 }
 
-const mapStateToProps = state => {
-    return {
-        movies: state.movies
-    }
-}
+// const mapStateToProps = state => {
+//     return {
+//         movies: state.movies
+//     }
+// }
 
-export default connect(mapStateToProps, {fetchMovies})(MoviesContainer);
+// export default connect(mapStateToProps, {fetchMovies})(MoviesContainer);
+export default MoviesContainer;

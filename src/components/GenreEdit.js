@@ -19,6 +19,7 @@ class GenreEdit extends React.Component {
     }
 
     //goal: save to database and update Redux store.
+    debugger;
     handleOnSubmit = (event) => {
         event.preventDefault();
         let genre = {...this.state, id: this.props.genre.id}
@@ -31,11 +32,13 @@ class GenreEdit extends React.Component {
     render() {
         return (
             <Container className="formContainer">
-                <Form.Group className="form" onSubmit={this.handleOnSubmit}>
-                    <Form.Label>Edit Genre Name:</Form.Label><br/>
-                    <Form.Control type="text" placeholder="Name" value={this.state.name} name="name" onChange={this.handleOnChange}/> <br/>
-                    <input type="submit" />
-                </Form.Group>
+                <form onSubmit={this.handleOnSubmit}>
+                    <Form.Group className="form">
+                        <Form.Label>Edit Genre Name:</Form.Label><br/>
+                        <Form.Control type="text" placeholder="Name" value={this.state.name} name="name" onChange={this.handleOnChange}/> <br/>
+                        <input type="submit" />
+                    </Form.Group>
+                </form>
             </Container>
         )
     }

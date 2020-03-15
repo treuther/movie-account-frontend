@@ -1,5 +1,6 @@
 import React from 'react';
 import {Route, Link} from 'react-router-dom';
+import {Container, ListGroup, Item} from 'react-bootstrap';
 
 
 //functional component because it's just listing info, not taking in info.
@@ -10,12 +11,16 @@ const GenreLists = (props) => {
     console.log(props)
     
     return (
-        <div>
+        <Container>
+            <h2>Movie Genres</h2>
+            <ListGroup>
+            <p>Click on a genre to see associated movies.</p>
             {props.genres.map(genre =>
-            <li key={genre.id}>
+            <ListGroup.Item key={genre.id}>
                 <Link to={`/genres/${genre.id}`}>{genre.name}</Link>
-            </li>)}
-        </div>
+            </ListGroup.Item>)}
+            </ListGroup>
+        </Container>
     )
 }
 

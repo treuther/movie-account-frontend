@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route} from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
 import Home from './components/Home';
 import NavBar from './components/NavBar';
 import GenresContainer from './containers/GenresContainer';
@@ -20,6 +20,9 @@ class App extends React.Component {
         <Route exact path='/' component={Home} />
         <GenresContainer />
         {/* <MoviesContainer /> */}
+        <Switch>
+          <Route exact path='/movies' component={MoviesContainer} />
+        </Switch>
       </div>
     );
   }

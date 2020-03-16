@@ -2,15 +2,15 @@
 
 import React from 'react';
 import {connect} from 'react-redux';
-// import {fetchMovies} from '../actions/fetchMovies';
+import {fetchGenres} from '../actions/fetchGenres';
 import MovieInput from '../components/MovieInput';
 import Movies from '../components/Movies';
 
 class MoviesContainer extends React.Component {
 
-    // componentDidMount() {
-    //     this.props.fetchMovies()
-    // }
+    componentDidMount() {
+        this.props.fetchGenres()
+    }
     
     render() {
         return(
@@ -19,17 +19,17 @@ class MoviesContainer extends React.Component {
                 {/* <Movies movies={this.props.genres && this.props.genres} /> */}
                 {/* <MovieInput genre={this.props.genre}/>*/}
                 {/* <Movies movies={this.props.genre && this.props.genre.movies}/> */}
-                <Movies movies={this.props.movies}/>
+                {/* <Movies movies={this.props.movies}/> */}
             </div>
         )
     }
 }
 
-// const mapStateToProps = state => {
-//     return {
-//         movies: state.movies
-//     }
-// }
+const mapStateToProps = state => {
+    return {
+        movies: state.movies
+    }
+}
 
-// export default connect(mapStateToProps, {fetchMovies})(MoviesContainer);
-export default MoviesContainer;
+export default connect(mapStateToProps, {fetchGenres})(MoviesContainer);
+// export default MoviesContainer;

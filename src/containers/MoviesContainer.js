@@ -18,7 +18,8 @@ class MoviesContainer extends React.Component {
                 {/* <MovieInput movie={this.props.movie} /> */}
                 {/* <Movies movies={this.props.genres && this.props.genres} /> */}
                 {/* <MovieInput genre={this.props.genre}/>*/}
-                <Movies movies={this.props.genre && this.props.genre.movies}/>
+                {/* <Movies movies={this.props.genre && this.props.genre.movies}/> */}
+                <Movies movies={this.props.movies}/>
             </div>
         )
     }

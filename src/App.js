@@ -1,6 +1,6 @@
 import React from 'react';
-// import logo from './logo.svg';
-// import './App.css';
+import {Route} from 'react-router-dom';
+import Home from './components/Home';
 import NavBar from './components/NavBar';
 import GenresContainer from './containers/GenresContainer';
 import MoviesContainer from './containers/MoviesContainer';
@@ -17,8 +17,9 @@ class App extends React.Component {
     return (
       <div className="App">
         <NavBar />
+        <Route exact path='/' component={Home} />
         <GenresContainer />
-        <MoviesContainer />
+        {/* <MoviesContainer /> */}
       </div>
     );
   }

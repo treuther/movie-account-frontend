@@ -19,7 +19,8 @@ class MoviesContainer extends React.Component {
                 {/* <Movies movies={this.props.genres && this.props.genres} /> */}
                 {/* <MovieInput genre={this.props.genre}/>*/}
                 {/* <Movies movies={this.props.genre && this.props.genre.movies}/> */}
-                {/* <Movies movies={this.props.movies}/> */}
+                {/* <Movies movies={this.props.genres.movies.map(movie => movie.title).flat()}/> */}
+                <Movies movies={this.props.movies.map(movie => movie.title)}/>
             </div>
         )
     }
@@ -27,7 +28,7 @@ class MoviesContainer extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        movies: state.movies
+        movies: state.genres.movies.map(movie => movie)
     }
 }
 

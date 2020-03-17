@@ -4,6 +4,7 @@ export function fetchMovies() {
         .then(resp => resp.json())
         .then(movies => dispatch({ //dispatch passes type and payload over to the reducer to update state.
             type: 'FETCH_MOVIES',
+            payload: movies
     }))
     }
 }

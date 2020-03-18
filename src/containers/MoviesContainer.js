@@ -20,7 +20,7 @@ class MoviesContainer extends React.Component {
                 {/* <MovieInput genre={this.props.genre}/>*/}
                 {/* <Movies movies={this.props.genre && this.props.genre.movies}/> */}
                 {/* <Movies genres={this.props.genres.movies.map(movie => movie.title).flat()}/> */}
-                <Movies genres={this.props.genres.movies.map(movie => movie.title).flat()}/>
+                <Movies genres={this.props.genres.map(genre => genre.movies)}/>
             </div>
         )
     }

@@ -21,7 +21,7 @@ class MovieInput extends React.Component {
 
     handleOnSubmit = (event) => {
         event.preventDefault();
-        this.props.addMovie(this.state, this.props.genre.id)
+        this.props.addMovie(this.state, this.props.movies && this.props.movies.genre.id)
         this.setState({
             title: '',
         rating: 'R',

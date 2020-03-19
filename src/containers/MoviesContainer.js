@@ -16,18 +16,7 @@ class MoviesContainer extends React.Component {
     render() {
         return(
             <div>
-   
-                {/* Movie Input also needs to associate with Genre */}
                 <MovieInput movie={this.props.movie} />
-
-                {/* <Movies movies={this.props.genres && this.props.genres} /> */}
-                {/* <MovieInput genre={this.props.genre}/>*/}
-                {/* <Movies movies={this.props.genre && this.props.genre.movies}/> */}
-                {/* <Movies genres={this.props.genres.movies.map(movie => movie.title).flat()}/> */}
-                {/* <Movies genres={this.props.genres && this.props.genres.map(genre => genre.movies)}/> */}
-
-                {/* This needs an conditional: if path is genre, then show correct movies with genre. If path
-                = movies, then list all movies. */}
                 <Movies movies={this.props.movies && this.props.movies} />
             </div>
         )

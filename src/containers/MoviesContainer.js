@@ -5,18 +5,20 @@ import {connect} from 'react-redux';
 import {fetchMovies} from '../actions/fetchMovies';
 import MovieInput from '../components/MovieInput';
 import Movies from '../components/Movies';
-import Genre from '../components/Genre';
 
 class MoviesContainer extends React.Component {
 
     componentDidMount() {
         this.props.fetchMovies()
     }
-    
+
+
     render() {
+        let currentPath = window.location.pathname;
         return(
             <div>
-                <MovieInput movie={this.props.movie} />
+                {!currentPath.includes('/movies') ? <MovieInput movie={this.props.movie} /> : null }
+                {/* <MovieInput movie={this.props.movie} /> */}
                 <Movies movies={this.props.movies && this.props.movies} />
             </div>
         )

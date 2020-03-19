@@ -3,7 +3,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
-import {deleteMovie} from '../actions/deleteMovie'
+import {deleteMovie} from '../actions/deleteMovie';
+import {Container, ListGroup, Item, Button} from 'react-bootstrap';
 
 const Movies = (props) => {
 
@@ -18,11 +19,13 @@ const handleDelete = (movie) => {
 // if path is via movies, then pull list of movies only.
 
     return (
-        <div>
-            {props.genres.movies && props.genres.movies.map(movie => 
-                    <li key={movie.id}>{movie.title} - {movie.rating} - {movie.description} <button onClick={() => handleDelete(movie)}>Delete</button></li>
+        <Container>
+            <ListGroup>
+            {props.movies && props.movies.map(movie => 
+                    <ListGroup.Item key={movie.id}><h3>{movie.title}</h3> <p>Rating: {movie.rating}</p><p>{movie.description}</p> <Button className="btn" variant="dark" onClick={() => handleDelete(movie)}>Delete</Button></ListGroup.Item>
                 )}
-        </div>
+            </ListGroup>
+        </Container>
     )
     // return (
         

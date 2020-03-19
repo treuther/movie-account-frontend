@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route, Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import {Container, ListGroup, Item, Button} from 'react-bootstrap';
 
 
@@ -9,13 +9,14 @@ import {Container, ListGroup, Item, Button} from 'react-bootstrap';
 const GenreLists = (props) => {
 
     console.log(props)
+
     
     return (
         <Container>
             <h2>Movie Genres</h2>
             <ListGroup>
             <p>Click on a genre to see associated movies.</p>
-            {props.genres.map(genre =>
+            {props.genres && props.genres.map(genre =>
             <ListGroup.Item key={genre.id}>
                 <Link to={`/genres/${genre.id}`}>{genre.name}</Link>
             </ListGroup.Item>)}

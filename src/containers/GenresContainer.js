@@ -7,7 +7,6 @@ import {fetchGenres} from '../actions/fetchGenres';
 import GenreLists from '../components/GenreLists';
 import GenreInput from '../components/GenreInput';
 import Genre from '../components/Genre';
-import MoviesContainer from './MoviesContainer';
 
 class GenresContainer extends React.Component {
 
@@ -22,7 +21,6 @@ class GenresContainer extends React.Component {
                     <Route path='/genres/new' component={GenreInput} /> {/*routes the user to genre input form*/}
                     <Route path='/genres/:id' render={(routerProps) => <Genre {...routerProps} genres={this.props.genres}/>}/>
                     <Route exact path='/genres' render={(routerProps) => <GenreLists {...routerProps} genres={this.props.genres}/>}/>
-                    {/* <Route exact path='/movies' render={(routerProps) => <MoviesContainer {...routerProps} movies={this.props.genres.map(genre => genre.movies).flat()}/>}/> */}
                 </Switch>
             </div>
         )
@@ -34,7 +32,7 @@ class GenresContainer extends React.Component {
 //accessing values currently in our store as props.
 const mapStateToProps = state => {
     return {
-        genres: state.genres
+        genres: state.genres.genres
     }
 }
 

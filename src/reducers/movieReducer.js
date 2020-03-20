@@ -12,7 +12,6 @@ export default function movieReducer(state = {movies: []}, action) {
                 }
             })
             return {...state, movies: movies}
-
         case 'DELETE_MOVIE':
             let removeMovies = state.movies.map(movie => {
                 if (movie.genre_id === action.payload) {

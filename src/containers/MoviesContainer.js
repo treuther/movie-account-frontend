@@ -18,8 +18,8 @@ class MoviesContainer extends React.Component {
         return(
             <div>
                 {!currentPath.includes('/movies') ? <MovieInput genre={this.props.genre} /> : null }
-                {/* <MovieInput movie={this.props.movie} /> */}
-                <Movies movies={this.props.movies && this.props.movies} />
+                <hr/>
+                <Movies movies={this.props.movies && this.props.movies} genre={this.props.genre}/>
             </div>
         )
     }

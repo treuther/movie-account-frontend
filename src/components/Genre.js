@@ -17,8 +17,10 @@ const Genre = (props) => {
             <h3>
                 {genre ? genre.name : null}
             </h3>
-                <MoviesContainer genre={genre}/>
-                <GenreEdit genre={genre}/>
+            <GenreEdit genre={genre}/>
+            <hr/>
+            <MoviesContainer genre={genre}/>
+                
         </Container>
         
     )

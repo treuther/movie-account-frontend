@@ -8,7 +8,7 @@ import {Container, ListGroup, Item, Button} from 'react-bootstrap';
 
 const Movies = (props) => {
 
-    console.log(props)
+    // console.log(props)
 
 //defined with const keywords because this is a functional component.
 const handleDelete = (movie) => {

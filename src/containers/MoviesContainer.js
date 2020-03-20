@@ -17,7 +17,7 @@ class MoviesContainer extends React.Component {
         let currentPath = window.location.pathname;
         return(
             <div>
-                {!currentPath.includes('/movies') ? <MovieInput movie={this.props.movie} /> : null }
+                {!currentPath.includes('/movies') ? <MovieInput genre={this.props.genre} /> : null }
                 {/* <MovieInput movie={this.props.movie} /> */}
                 <Movies movies={this.props.movies && this.props.movies} />
             </div>

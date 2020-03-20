@@ -6,6 +6,6 @@ export const deleteMovie = (movieId, genreId) => {
             method: 'DELETE'
         })
         .then(resp => resp.json())
-        .then(genre => dispatch({type: 'DELETE_MOVIE', payload: genre}))
+        .then(movie => dispatch({type: 'DELETE_MOVIE', payload: movie}))
     }
 }

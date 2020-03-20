@@ -3,6 +3,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import { addMovie } from '../actions/addMovie';
+import {Form, Group, Cotnrol, Label, Container} from 'react-bootstrap';
 
 
 class MovieInput extends React.Component {
@@ -31,21 +32,24 @@ class MovieInput extends React.Component {
 
     render() {
         return(
-            <div>
+            <Container className='formContainer'>
+                <h2>Enter New Movie</h2>
                 <form onSubmit={this.handleOnSubmit}>
-                    <label>Enter title:</label><br />
-                    <input type="text" name="title" value={this.state.title} onChange={this.handleOnChange}/><br/>
-                    <label>Choose rating:</label>
-                    <select name="rating" value={this.state.rating} onChange={this.handleOnChange}>
-                        <option>R</option>
-                        <option>PG-13</option>
-                        <option>PG</option>
-                    </select><br />
-                    <label>Enter description:</label><br />
-                    <input type="text" name="description" value={this.state.description} onChange={this.handleOnChange}/><br/>
-                    <input type="submit" />
+                    <Form.Group className="form">
+                        <Form.Label>Enter title:</Form.Label><br />
+                        <Form.Control type="text" name="title" value={this.state.title} onChange={this.handleOnChange}/><br/>
+                        <Form.Label>Choose rating:</Form.Label>
+                        <Form.Control as="select" name="rating" value={this.state.rating} onChange={this.handleOnChange}>
+                            <option>R</option>
+                            <option>PG-13</option>
+                            <option>PG</option>
+                        </Form.Control><br />
+                        <label>Enter description:</label><br />
+                        <Form.Control type="text" name="description" value={this.state.description} onChange={this.handleOnChange}/><br/>
+                        <input type="submit" />
+                    </Form.Group>
                 </form>
-            </div>
+            </Container>
         )
     }
 }

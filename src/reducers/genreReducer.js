@@ -5,8 +5,10 @@ export default function genreReducer(state = {genres: []}, action) {
     switch (action.type) {
         case 'FETCH_GENRES':
             return {genres: action.payload}
+
         case 'ADD_GENRE':
             return {...state, genres: [...state.genres, action.payload]} //returns an array of all previous genres, plus the new genre with action.payload.
+        
         case 'EDIT_GENRE':
             let editGenres = state.genres.map(genre => {
                 if (genre.id === action.payload.id) {
@@ -16,6 +18,7 @@ export default function genreReducer(state = {genres: []}, action) {
                 }
             })
             return {...state, genres: editGenres}
+        
         default:
             return state
     }  

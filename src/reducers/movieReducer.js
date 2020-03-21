@@ -22,7 +22,7 @@ export default function movieReducer(state = {movies: []}, action) {
 
         case 'DELETE_MOVIE':
             let removeMovie = state.movies.map(movie => {
-                if (movie.genre_id === action.payload) {
+                if (movie === action.payload) {
                     return action.payload
                 } else {
                     return movie

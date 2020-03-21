@@ -9,11 +9,13 @@ export const addMovie = (movie, genreId) => {
             body: JSON.stringify(movie)
         })
         .then(resp => resp.json())
+        .then(resp => fetch('http://localhost:3000/api/v1/movies'))
+        .then(resp => resp.json())
         .then(movie => {
             if (movie.error) {
                 alert(movie.error)
             } else {
-                dispatch({type: 'ADD_MOVIE', payload: movie})
+                dispatch({type: 'FETCH_MOVIES', payload: movie})
             } 
         })
     }

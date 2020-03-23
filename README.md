@@ -4,6 +4,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 This app is an online "notebook" that allows users to create genres and record movies. Because nothing is worse than rewatching a movie because you forgot you've already seen it....
 
+[HERE IS A LINK TO THE BACKEND](https://github.com/treuther/movie-account-backend)
+
 ## Available Scripts
 
 In the project directory, you can run:

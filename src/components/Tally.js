@@ -8,8 +8,8 @@ const Tally = (props) => {
         <Container className="tally">
             <h2>Emporium Tally</h2>
             <div>
-                {props.genre ? props.genre.count : null}
-                {/* {props.genre} */}
+                {/* {props.genre ? props.genre.count : null} */}
+                {/* {props.genre && props.genre.map(genre => genre.count)} */}
             </div>
         </Container>
     )

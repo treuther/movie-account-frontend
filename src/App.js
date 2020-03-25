@@ -19,7 +19,6 @@ class App extends React.Component {
         <NavBar />
         <Route exact path='/' component={Home} />
         <GenresContainer />
-        {/* <MoviesContainer /> */}
         <Switch>
           <Route exact path='/movies' component={MoviesContainer} />
         </Switch>

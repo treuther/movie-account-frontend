@@ -2,7 +2,6 @@
 //functional component because not utilizing state
 
 import React from 'react';
-import {Redirect} from 'react-router-dom';
 import MoviesContainer from '../containers/MoviesContainer';
 import GenreEdit from './GenreEdit'
 import {Container} from 'react-bootstrap';

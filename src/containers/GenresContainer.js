@@ -11,7 +11,9 @@ import Genre from '../components/Genre';
 class GenresContainer extends React.Component {
 
     componentDidMount() {
+        console.log("a")
         this.props.fetchGenres()
+        console.log("b")
     }
 
     render() {

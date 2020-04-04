@@ -1,8 +1,5 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import {Route, Switch} from 'react-router-dom';
 import {Container, Row, Col} from 'react-bootstrap';
-import {fetchGenres} from '../actions/fetchGenres';
 import Tally from './Tally';
 
 const Home = (props) => {

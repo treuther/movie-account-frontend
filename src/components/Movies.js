@@ -1,7 +1,6 @@
 //functional component because it receives prop
 
 import React from 'react';
-import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {deleteMovie} from '../actions/deleteMovie';
 import {Container, ListGroup, Item, Button} from 'react-bootstrap';
@@ -39,7 +38,6 @@ handleSort = () => {
 
     render() {
 
-        // let currentPath = window.location.pathname;
         let sorted = this.state.movies
 
         return (

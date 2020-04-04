@@ -39,17 +39,30 @@ handleSort = () => {
 
     render() {
 
-        let currentPath = window.location.pathname;
+        // let currentPath = window.location.pathname;
+        let sorted = this.state.movies
+
         return (
             <Container>
                 <h2>Recorded Movies</h2>
                 <Button className="btn" variant="dark" onClick={() => this.handleSort()}>Sort title</Button>
                 <ListGroup>
+
+                    {sorted
+                        ? this.state.movies && this.state.movies.map(movie => 
+                            <ListGroup.Item key={movie.id}><h3>{movie.title}</h3> <p>Rating: {movie.rating}</p><p>{movie.description}</p>
+                            <Button className="btn" variant="dark" onClick={() => this.handleDelete(movie)}>Delete</Button>
+                            </ListGroup.Item>
+                        )
+                        : null
+                    }
+
                     {this.props.movies && this.props.movies.map(movie => 
                         <ListGroup.Item key={movie.id}><h3>{movie.title}</h3> <p>Rating: {movie.rating}</p><p>{movie.description}</p>
                         <Button className="btn" variant="dark" onClick={() => this.handleDelete(movie)}>Delete</Button>
                         </ListGroup.Item>
                     )}
+
                 </ListGroup>
             </Container>
         )
@@ -66,3 +79,5 @@ export default connect(null, {deleteMovie})(Movies);
 // 3. Access the array of movies (props.movies)
 // 4. Call sort() on array of movies (props.movies.sort())
 // 5. Display sorted array (state)
+
+// Conditional Rendering Steps

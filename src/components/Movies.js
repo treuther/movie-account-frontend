@@ -46,20 +46,24 @@ handleSort = () => {
                 <Button className="btn" variant="dark" onClick={() => this.handleSort()}>Sort title</Button>
                 <ListGroup>
 
-                    {sorted
+                    {sorted.length > 0
                         ? this.state.movies && this.state.movies.map(movie => 
                             <ListGroup.Item key={movie.id}><h3>{movie.title}</h3> <p>Rating: {movie.rating}</p><p>{movie.description}</p>
                             <Button className="btn" variant="dark" onClick={() => this.handleDelete(movie)}>Delete</Button>
                             </ListGroup.Item>
                         )
-                        : null
+                        : this.props.movies && this.props.movies.map(movie => 
+                            <ListGroup.Item key={movie.id}><h3>{movie.title}</h3> <p>Rating: {movie.rating}</p><p>{movie.description}</p>
+                            <Button className="btn" variant="dark" onClick={() => this.handleDelete(movie)}>Delete</Button>
+                            </ListGroup.Item>
+                        )
                     }
 
-                    {this.props.movies && this.props.movies.map(movie => 
+                    {/* {this.props.movies && this.props.movies.map(movie => 
                         <ListGroup.Item key={movie.id}><h3>{movie.title}</h3> <p>Rating: {movie.rating}</p><p>{movie.description}</p>
                         <Button className="btn" variant="dark" onClick={() => this.handleDelete(movie)}>Delete</Button>
                         </ListGroup.Item>
-                    )}
+                    )} */}
 
                 </ListGroup>
             </Container>

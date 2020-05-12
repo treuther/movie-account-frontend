@@ -26,8 +26,9 @@ class MoviesContainer extends React.Component {
 }
 
 // Genre.js is passing in genre over to MoviesContainer. Coming in as ownProp
-const mapStateToProps = (state, ownProp) => {
-    const movieGenre = ownProp.genre
+//ownProps is an optional 2nd argument
+const mapStateToProps = (state, ownProps) => {
+    const movieGenre = ownProps.genre
 
     if(movieGenre) {
         return {

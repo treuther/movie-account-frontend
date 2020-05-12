@@ -3,7 +3,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import { addMovie } from '../actions/addMovie';
-import {Form, Group, Cotnrol, Label, Container} from 'react-bootstrap';
+import {Form, Group, Control, Label, Container} from 'react-bootstrap';
 
 
 class MovieInput extends React.Component {

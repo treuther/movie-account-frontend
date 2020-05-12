@@ -22,7 +22,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <NavBar />
-        {/* Route = routs paths to specified component/path/function */}
+        {/* Route = routes paths to specified component/path/function */}
         <Route exact path='/' component={Home} />
         <GenresContainer />
         {/* Switch will only render the first matched child route */}

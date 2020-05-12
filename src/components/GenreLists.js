@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link} from 'react-router-dom'; //Link = anchor tag
 import {Container, ListGroup, Item, Button} from 'react-bootstrap';
 
 
@@ -18,6 +18,7 @@ const GenreLists = (props) => {
             <p>Click on a genre to see associated movies.</p>
             {props.genres && props.genres.map(genre =>
             <ListGroup.Item key={genre.id}>
+                {/* Link = anchor tag */}
                 <Link to={`/genres/${genre.id}`}>{genre.name}</Link>
             </ListGroup.Item>)}
             </ListGroup>

@@ -10,12 +10,14 @@ import Genre from '../components/Genre';
 
 class GenresContainer extends React.Component {
 
+    //Mounting phase. Invoked immediately after a component is mounted.
     componentDidMount() {
         console.log("a")
-        this.props.fetchGenres()
+        this.props.fetchGenres() //performing fetchGenres() on this.props
         console.log("b")
     }
 
+    //The only required method for class components
     render() {
         return (
             <div>
@@ -32,10 +34,13 @@ class GenresContainer extends React.Component {
 //...routerProps give Genre access to params
 
 //accessing values currently in our store as props.
+//state = entire Redux store
 const mapStateToProps = state => {
     return {
         genres: state.genres.genres
     }
 }
-
+//mapStateToProps passed as 1st argument and will be called everytime the Redux store state changes
+//used for selective data from the store that the connected component needs
 export default connect(mapStateToProps, {fetchGenres})(GenresContainer);
+//connect = connects the React component to the Redux store

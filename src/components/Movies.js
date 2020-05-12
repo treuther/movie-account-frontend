@@ -17,7 +17,7 @@ state = {
 
 //defined with const keywords because this is a functional component.
 handleDelete = (movie) => {
-    this.props.deleteMovie(movie.id, movie.genre_id) //because this is a functional componenet, it comes in a props, not this.props
+    this.props.deleteMovie(movie.id, movie.genre_id) //because this is a functional componenet, it comes in as props, not this.props
 }
 
 handleSort = () => {

@@ -5,8 +5,11 @@ import NavBar from './components/NavBar';
 import GenresContainer from './containers/GenresContainer';
 import MoviesContainer from './containers/MoviesContainer';
 
+// All visible content is contained within the App class. JSX
+//Top-level parent component
 class App extends React.Component {
 
+  //Mounting phase. Invoked immediately after a component is mounted. Requires the component to already be in the DOM.
   // componentDidMount() {
     // fetch('http://localhost:3000/api/v1/genres/1')
     // .then(response => response.json())
@@ -40,5 +43,7 @@ class App extends React.Component {
 //connect passes the function over to App
 //connect can pass, mapStateToProps, mapDispatchToProps, or directly pass in an action creater.
 //action creater gives us the ability to update our store directly from fetching component.
-export default App;
+export default App; //Allows other files to import things from App.js.
+//There are named exports and default exports.
+//You can only have 1 export default per file.
 //connect is dispatching

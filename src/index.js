@@ -33,3 +33,6 @@ ReactDOM.render(
     ,
 document.getElementById('root'));
 
+//Index.js is the top of the chain. 
+//document.getElementById('root') - React still relies on Index.html to load JS.
+

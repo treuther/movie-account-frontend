@@ -5,7 +5,7 @@ import {Container, ListGroup, Item, Button} from 'react-bootstrap';
 
 //functional component because it's just listing info, not taking in info.
 
-//this will render a list of genres
+//this will return a list of genres
 const GenreLists = (props) => {
 
     console.log(props)

@@ -5,7 +5,7 @@ import NavBar from './components/NavBar';
 import GenresContainer from './containers/GenresContainer';
 import MoviesContainer from './containers/MoviesContainer';
 
-// All visible content is contained within the App class. JSX
+// All visible content is contained within the App class. JSX syntax
 //Top-level parent component
 class App extends React.Component {
 
@@ -16,12 +16,16 @@ class App extends React.Component {
     // .then(data => console.log(data))
   // }
 
+  // render is the only required method for class components
+  // Both Mounting and Updating phase
   render() {
     return (
       <div className="App">
         <NavBar />
+        {/* Route = routs paths to specified component/path/function */}
         <Route exact path='/' component={Home} />
         <GenresContainer />
+        {/* Switch will only render the first matched child route */}
         <Switch>
           <Route exact path='/movies' component={MoviesContainer} />
         </Switch>

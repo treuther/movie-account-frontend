@@ -5,17 +5,15 @@ import {connect} from 'react-redux';
 import {deleteMovie} from '../actions/deleteMovie';
 import {Container, ListGroup, Item, Button} from 'react-bootstrap';
 
+
+// Initially this was a functional component, which are stateless
+// Changed to class component to have local state
 class Movies extends React.Component {
-
-// const Movies = (props) => {
-
-    // console.log(props)
 
 state = {
     movies: []
 }
 
-//defined with const keywords because this is a functional component.
 handleDelete = (movie) => {
     this.props.deleteMovie(movie.id, movie.genre_id) //because this is a functional componenet, it comes in as props, not this.props
 }

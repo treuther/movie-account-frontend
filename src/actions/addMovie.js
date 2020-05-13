@@ -12,7 +12,7 @@ export const addMovie = (movie, genreId) => {
         .then(resp => fetch('http://localhost:3000/api/v1/movies'))
         .then(resp => resp.json())
         .then(movie => {
-            if (movie.error) {
+            if (movie.error) { //see controller for error message
                 alert(movie.error)
             } else {
                 dispatch({type: 'FETCH_MOVIES', payload: movie})

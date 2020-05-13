@@ -44,3 +44,12 @@ const mapStateToProps = state => {
 //used for selective data from the store that the connected component needs
 export default connect(mapStateToProps, {fetchGenres})(GenresContainer);
 //connect = connects the React component to the Redux store
+
+// mapStateToProps - 1st argument (and required) to connect(); if not present, use null
+// if mapStateToProps is specified, it means that the wrapper component will
+// subscribe to Redux store updates. Any time the store is updated, mapStateToProps
+// will be called.
+
+// mapDispatchToProps - 2nd argument (and optional) to connect()
+// if declared, lets you create functions that dispatch when called and pass
+// those functions as props to your component

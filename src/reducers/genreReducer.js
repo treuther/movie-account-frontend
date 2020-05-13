@@ -1,3 +1,8 @@
+//REDUCER - takes in current state, the action to be processed and returns the
+//state as it should be, based on that action occuring.
+//reducers return the new state, they DO NOT modify
+//CANNOT use mutating methods ie splice push pop
+// can use map, filter, spread
 //reducer is automaticaly passed the previous state as its first argument
 
 export default function genreReducer(state = {genres: []}, action) {

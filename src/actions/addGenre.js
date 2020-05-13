@@ -7,6 +7,7 @@
 //completed.
 
 //passing in dispatch function passes in the new data.
+//genreFormData = info that came in from the GenreInput form
 //fetch POST request to send the new data to the DB.
 export const addGenre = (genreFormData) => {
     

@@ -1,5 +1,6 @@
 export const editGenre = (genreFormData) => {
     
+    //dispatch = Redux store method. requires action with type. other properties are optional
     return (dispatch) => {
         fetch(`http://localhost:3000/api/v1/genres/${genreFormData.id}`, {
             headers: {

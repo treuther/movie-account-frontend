@@ -14,8 +14,10 @@ state = {
     movies: []
 }
 
+// props VS this.props - if super(props) is present, then component is
+// inheriting from parent and no need for this.props.
 handleDelete = (movie) => {
-    this.props.deleteMovie(movie.id, movie.genre_id) //because this is a functional componenet, it comes in as props, not this.props
+    this.props.deleteMovie(movie.id, movie.genre_id)
 }
 
 handleSort = () => {
@@ -44,6 +46,7 @@ handleSort = () => {
                 <Button className="btn" variant="dark" onClick={() => this.handleSort()}>Sort title</Button>
                 <ListGroup>
 
+                    {/* && = Came from project prep page. SEE NOTES BELOW */}
                     {sorted.length > 0
                         ? this.state.movies && this.state.movies.map(movie => 
                             <ListGroup.Item key={movie.id}><h3>{movie.title}</h3> <p>Rating: {movie.rating}</p><p>{movie.description}</p>
@@ -81,3 +84,12 @@ export default connect(null, {deleteMovie})(Movies);
 // 5. Display sorted array (state)
 
 // Conditional Rendering Steps
+
+
+
+// NOTES ON USE OF &&
+// Project Handy Tools & Resources:
+//https://stackoverflow.com/questions/50845894/reactjs-typeerror-cannot-read-property-map-of-undefined
+// One can use the conditional rendering to render your movies.
+// Therefore if movies is undefined the right operand of the and operator
+// (&&) will not be rendered

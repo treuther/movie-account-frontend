@@ -7,10 +7,12 @@
 
 export default function genreReducer(state = {genres: []}, action) {
     
+    // Performs different actions based on different conditions
     switch (action.type) {
         case 'FETCH_GENRES':
             return {genres: action.payload}
 
+        // Spread Operator - easier way of copying an array.
         case 'ADD_GENRE':
             return {...state, genres: [...state.genres, action.payload]} //returns an array of all previous genres, plus the new genre with action.payload.
         

@@ -11,7 +11,10 @@ class GenreEdit extends React.Component {
         name: ''
     }
 
-    // abstracting the name KEY from input. Useful when there is more than one value to pass in. Brackets because it's reading the entered value and sets it as key. The rules of JS object assinging.
+    // abstracting the name KEY from input.
+    // Useful when there is more than one value to pass in.
+    // Brackets because it's reading the entered value and sets it as key.
+    // The rules of JS object assinging.
     handleOnChange = (event) => {
         this.setState({
             [event.target.name]: event.target.value
@@ -19,7 +22,6 @@ class GenreEdit extends React.Component {
     }
 
     //goal: save to database and update Redux store.
-    debugger;
     handleOnSubmit = (event) => {
         event.preventDefault();
         let genre = {...this.state, id: this.props.genre.id}

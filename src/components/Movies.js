@@ -11,7 +11,8 @@ import {Container, ListGroup, Item, Button} from 'react-bootstrap';
 class Movies extends React.Component {
 
 state = {
-    movies: []
+    movies: [],
+    liked: true
 }
 
 // props VS this.props - if super(props) is present, then component is
@@ -22,19 +23,43 @@ handleDelete = (movie) => {
 
 handleSort = () => {
    console.log("hello")
-    let sortedList = [...this.props.movies].sort((a, b) => {
-        if (a.title < b.title) {
-            return -1;
-        } 
-        if (a.title > b.title) {
-            return 1;
-        }
-        return 0;
-    })
+    // let sortedList = [...this.props.movies].sort((a, b) => {
+    //     if (a.title < b.title) {
+    //         return -1;
+    //     } 
+    //     if (a.title > b.title) {
+    //         return 1;
+    //     }
+    //     return 0;
+    // })
     this.setState({
-        movies: sortedList
+        // movies: sortedList,
+        sorted: true
     })
 }
+
+    handleChange = () => {
+        this.setState(prevState => ({
+            liked: !prevState.liked
+        }))
+    }
+
+    static getDerivedStateFromProps(props, state) {
+        let movieList = props.movies
+        console.log(state)
+        if (state.sorted === true) {
+            movieList.sort((a, b) => {
+                if (a.title < b.title) {
+                    return -1;
+                } 
+                if (a.title > b.title) {
+                    return 1;
+                }
+                return 0;
+            })
+        }
+        return {movies: movieList}
+    }
 
     render() {
 
@@ -47,7 +72,7 @@ handleSort = () => {
                 <ListGroup>
 
                     {/* && = Came from project prep page. SEE NOTES BELOW */}
-                    {sorted.length > 0
+                    {/* {sorted.length > 0
                         ? this.state.movies && this.state.movies.map(movie => 
                             <ListGroup.Item key={movie.id}><h3>{movie.title}</h3> <p>Rating: {movie.rating}</p><p>{movie.description}</p>
                             <Button className="btn" variant="dark" onClick={() => this.handleDelete(movie)}>Delete</Button>
@@ -58,7 +83,13 @@ handleSort = () => {
                             <Button className="btn" variant="dark" onClick={() => this.handleDelete(movie)}>Delete</Button>
                             </ListGroup.Item>
                         )
-                    }
+                    } */}
+
+                        {this.state.movies.map(movie => 
+                            <ListGroup.Item key={movie.id}><h3>{movie.title}</h3> <p>Rating: {movie.rating}</p><p>{movie.description}</p>
+                            <Button className="btn" variant="dark" onClick={this.handleChange}>{this.state.liked ? "Liked" : "Unliked"}</Button>
+                            <Button className="btn" variant="dark" onClick={() => this.handleDelete(movie)}>Delete</Button>
+                    </ListGroup.Item>)}
 
                     {/* {this.props.movies && this.props.movies.map(movie => 
                         <ListGroup.Item key={movie.id}><h3>{movie.title}</h3> <p>Rating: {movie.rating}</p><p>{movie.description}</p>
@@ -93,3 +124,9 @@ export default connect(null, {deleteMovie})(Movies);
 // One can use the conditional rendering to render your movies.
 // Therefore if movies is undefined the right operand of the and operator
 // (&&) will not be rendered
+
+// steps
+//1. add a like button
+//2. add onClick to trigger
+//3. handleChange will toggle
+//4. assign a variable - to be called in the render

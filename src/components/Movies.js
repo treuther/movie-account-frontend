@@ -11,11 +11,6 @@ import LikeButton from './LikeButton';
 // Changed to class component to have local state
 class Movies extends React.Component {
 
-state = {
-    movies: [],
-    liked: true
-}
-
 // props VS this.props - if super(props) is present, then component is
 // inheriting from parent and no need for this.props.
 handleDelete = (movie) => {
@@ -24,17 +19,7 @@ handleDelete = (movie) => {
 
 handleSort = () => {
    console.log("hello")
-    // let sortedList = [...this.props.movies].sort((a, b) => {
-    //     if (a.title < b.title) {
-    //         return -1;
-    //     } 
-    //     if (a.title > b.title) {
-    //         return 1;
-    //     }
-    //     return 0;
-    // })
     this.setState({
-        // movies: sortedList,
         sorted: true
     })
 }
@@ -73,32 +58,12 @@ handleSort = () => {
                 <ListGroup>
 
                     {/* && = Came from project prep page. SEE NOTES BELOW */}
-                    {/* {sorted.length > 0
-                        ? this.state.movies && this.state.movies.map(movie => 
-                            <ListGroup.Item key={movie.id}><h3>{movie.title}</h3> <p>Rating: {movie.rating}</p><p>{movie.description}</p>
-                            <Button className="btn" variant="dark" onClick={() => this.handleDelete(movie)}>Delete</Button>
-                            </ListGroup.Item>
-                        )
-                        : this.props.movies && this.props.movies.map(movie => 
-                            <ListGroup.Item key={movie.id}><h3>{movie.title}</h3> <p>Rating: {movie.rating}</p><p>{movie.description}</p>
-                            <Button className="btn" variant="dark" onClick={() => this.handleDelete(movie)}>Delete</Button>
-                            </ListGroup.Item>
-                        )
-                    } */}
-
                         {this.state.movies.map(movie => 
                             <ListGroup.Item key={movie.id}><h3>{movie.title}</h3> <p>Rating: {movie.rating}</p><p>{movie.description}</p>
                             {/* <Button className="btn" variant="dark" onClick={this.handleChange}>{this.state.liked ? "Liked" : "Unliked"}</Button> */}
                             <LikeButton movieId={movie.id} />
                             <Button className="btn" variant="dark" onClick={() => this.handleDelete(movie)}>Delete</Button>
                     </ListGroup.Item>)}
-
-                    {/* {this.props.movies && this.props.movies.map(movie => 
-                        <ListGroup.Item key={movie.id}><h3>{movie.title}</h3> <p>Rating: {movie.rating}</p><p>{movie.description}</p>
-                        <Button className="btn" variant="dark" onClick={() => this.handleDelete(movie)}>Delete</Button>
-                        </ListGroup.Item>
-                    )} */}
-
                 </ListGroup>
             </Container>
         )
@@ -127,6 +92,7 @@ export default connect(null, {deleteMovie})(Movies);
 // Therefore if movies is undefined the right operand of the and operator
 // (&&) will not be rendered
 
+//# Add like button to each listed movie
 // steps
 //1. add a like button
 //2. add onClick to trigger

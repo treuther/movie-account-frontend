@@ -5,6 +5,7 @@ import {connect} from 'react-redux';
 import {fetchMovies} from '../actions/fetchMovies';
 import MovieInput from '../components/MovieInput';
 import Movies from '../components/Movies';
+import {Button} from 'react-bootstrap';
 
 class MoviesContainer extends React.Component {
 
@@ -12,7 +13,6 @@ class MoviesContainer extends React.Component {
     componentDidMount() {
         this.props.fetchMovies() //performs fetchMovies() to this.props
     }
-
 
     //The only required method for class components
     render() {
@@ -22,7 +22,7 @@ class MoviesContainer extends React.Component {
                 {!currentPath.includes('/movies') ? <MovieInput genre={this.props.genre} /> : null }
                 <hr/>
                 {/* && = Came from project prep page. SEE NOTES BELOW */}
-                <Movies movies={this.props.movies && this.props.movies} genre={this.props.genre}/>
+                <Movies movies={this.props.movies && this.props.movies} genre={this.props.genre} />
             </div>
         )
     }

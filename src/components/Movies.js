@@ -4,6 +4,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {deleteMovie} from '../actions/deleteMovie';
 import {Container, ListGroup, Item, Button} from 'react-bootstrap';
+import LikeButton from './LikeButton';
 
 
 // Initially this was a functional component, which are stateless
@@ -87,7 +88,8 @@ handleSort = () => {
 
                         {this.state.movies.map(movie => 
                             <ListGroup.Item key={movie.id}><h3>{movie.title}</h3> <p>Rating: {movie.rating}</p><p>{movie.description}</p>
-                            <Button className="btn" variant="dark" onClick={this.handleChange}>{this.state.liked ? "Liked" : "Unliked"}</Button>
+                            {/* <Button className="btn" variant="dark" onClick={this.handleChange}>{this.state.liked ? "Liked" : "Unliked"}</Button> */}
+                            <LikeButton movieId={movie.id} />
                             <Button className="btn" variant="dark" onClick={() => this.handleDelete(movie)}>Delete</Button>
                     </ListGroup.Item>)}
 

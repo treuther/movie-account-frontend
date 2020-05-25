@@ -11,6 +11,10 @@ import LikeButton from './LikeButton';
 // Changed to class component to have local state
 class Movies extends React.Component {
 
+state = {
+    movies: []
+}
+
 // props VS this.props - if super(props) is present, then component is
 // inheriting from parent and no need for this.props.
 handleDelete = (movie) => {
@@ -23,12 +27,6 @@ handleSort = () => {
         sorted: true
     })
 }
-
-    handleChange = () => {
-        this.setState(prevState => ({
-            liked: !prevState.liked
-        }))
-    }
 
     static getDerivedStateFromProps(props, state) {
         let movieList = props.movies
@@ -49,14 +47,11 @@ handleSort = () => {
 
     render() {
 
-        let sorted = this.state.movies
-
         return (
             <Container>
                 <h2>Recorded Movies</h2>
                 <Button className="btn" variant="dark" onClick={() => this.handleSort()}>Sort title</Button>
                 <ListGroup>
-
                     {/* && = Came from project prep page. SEE NOTES BELOW */}
                         {this.state.movies.map(movie => 
                             <ListGroup.Item key={movie.id}><h3>{movie.title}</h3> <p>Rating: {movie.rating}</p><p>{movie.description}</p>
@@ -94,7 +89,9 @@ export default connect(null, {deleteMovie})(Movies);
 
 //# Add like button to each listed movie
 // steps
-//1. add a like button
-//2. add onClick to trigger
-//3. handleChange will toggle
-//4. assign a variable - to be called in the render
+//1. create LikeButton component
+//2. add button to LikeButton
+//3. add handle function to upldate like
+//4. add conditional to change button text based on like status
+//5. add LikeButton component to Movies
+//6. pass in movie.id to LikeButton
